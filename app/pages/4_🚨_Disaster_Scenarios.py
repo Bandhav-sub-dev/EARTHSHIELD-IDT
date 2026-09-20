@@ -202,13 +202,13 @@ def nearest_shelter(person, scenario):
 
         # Do not recommend a facility inside the simulated impact zone.
         shelter_to_disaster = haversine_km(
-            scenario["latitude"],
-            scenario["longitude"],
+            scenario.get('latitude', None),
+            scenario.get('longitude', None),
             facility["latitude"],
             facility["longitude"],
         )
 
-        if shelter_to_disaster <= scenario["impact_radius_km"]:
+        if shelter_to_disaster <= scenario.get('impact_radius_km', 0.0):
             continue
 
         candidates.append(
@@ -229,13 +229,13 @@ def get_affected_people(scenario):
 
     for person in people:
         distance = haversine_km(
-            scenario["latitude"],
-            scenario["longitude"],
+            scenario.get('latitude', None),
+            scenario.get('longitude', None),
             person["latitude"],
             person["longitude"],
         )
 
-        if distance <= scenario["impact_radius_km"]:
+        if distance <= scenario.get('impact_radius_km', 0.0):
             result.append(
                 {
                     "person": person,
@@ -253,9 +253,9 @@ def sms_text(person, scenario, shelter_info):
         "EARTHSHIELD DEMO ALERT\n"
         "--------------------------------\n"
         f"Hello {person['name']},\n\n"
-        f"DISASTER: {scenario['disaster_type']}\n"
-        f"SEVERITY: {scenario['severity']}\n"
-        f"AREA: {scenario['area']}\n\n"
+        f"DISASTER: {scenario.get('disaster_type', scenario.get('hazard_type', 'Unknown Hazard'))}\n"
+        f"SEVERITY: {scenario.get('severity', 'Unknown')}\n"
+        f"AREA: {scenario.get('area', 'Unknown Area')}\n\n"
         "You are inside the simulated impact zone.\n\n"
         "NEAREST SAFE SHELTER\n"
         f"{shelter['name']}\n"
@@ -326,23 +326,23 @@ radius = st.sidebar.slider(
     "Impact radius (km)",
     min_value=1,
     max_value=50,
-    value=int(scenario["impact_radius_km"]),
+    value=int(scenario.get('impact_radius_km', 0.0)),
     step=1,
 )
 
 st.sidebar.divider()
 
 st.sidebar.write("**Scenario Information**")
-st.sidebar.write(f"Disaster: {scenario['disaster_type']}")
-st.sidebar.write(f"Severity: {scenario['severity']}")
-st.sidebar.write(f"Area: {scenario['area']}")
+st.sidebar.write(f"Disaster: {scenario.get('disaster_type', scenario.get('hazard_type', 'Unknown Hazard'))}")
+st.sidebar.write(f"Severity: {scenario.get('severity', 'Unknown')}")
+st.sidebar.write(f"Area: {scenario.get('area', 'Unknown Area')}")
 
 
 # =============================================================================
 # SCENARIO HEADER
 # =============================================================================
 
-st.subheader(f"🚨 {scenario['name']}")
+st.subheader(f"🚨 {scenario.get('name', 'Unnamed Scenario')}")
 
 c1, c2, c3, c4 = st.columns(4)
 
@@ -354,8 +354,8 @@ scenario_runtime["impact_radius_km"] = radius
 
 affected = get_affected_people(scenario_runtime)
 
-c1.metric("Disaster", scenario["disaster_type"])
-c2.metric("Severity", scenario["severity"])
+c1.metric("Disaster", scenario.get('disaster_type', scenario.get('hazard_type', 'Unknown Hazard')))
+c2.metric("Severity", scenario.get('severity', 'Unknown'))
 c3.metric("Impact Radius", f"{radius} km")
 c4.metric("Affected Demo People", len(affected))
 
@@ -368,8 +368,8 @@ st.markdown("### 🗺️ Disaster Impact Map")
 
 m = folium.Map(
     location=[
-        scenario["latitude"],
-        scenario["longitude"],
+        scenario.get('latitude', None),
+        scenario.get('longitude', None),
     ],
     zoom_start=11,
     tiles="OpenStreetMap",
@@ -388,13 +388,13 @@ folium.TileLayer(
 # Disaster point
 folium.Marker(
     [
-        scenario["latitude"],
-        scenario["longitude"],
+        scenario.get('latitude', None),
+        scenario.get('longitude', None),
     ],
     popup=(
-        f"<b>{scenario['name']}</b><br>"
-        f"{scenario['disaster_type']}<br>"
-        f"Severity: {scenario['severity']}"
+        f"<b>{scenario.get('name', 'Unnamed Scenario')}</b><br>"
+        f"{scenario.get('disaster_type', scenario.get('hazard_type', 'Unknown Hazard'))}<br>"
+        f"Severity: {scenario.get('severity', 'Unknown')}"
     ),
     tooltip="DISASTER EVENT",
     icon=folium.Icon(
@@ -406,8 +406,8 @@ folium.Marker(
 # Impact radius
 folium.Circle(
     [
-        scenario["latitude"],
-        scenario["longitude"],
+        scenario.get('latitude', None),
+        scenario.get('longitude', None),
     ],
     radius=radius * 1000,
     color="#ef4444",
@@ -422,8 +422,8 @@ for entry in [
     {
         "person": p,
         "distance": haversine_km(
-            scenario["latitude"],
-            scenario["longitude"],
+            scenario.get('latitude', None),
+            scenario.get('longitude', None),
             p["latitude"],
             p["longitude"],
         ),
@@ -461,8 +461,8 @@ for facility in facilities:
         continue
 
     facility_distance = haversine_km(
-        scenario["latitude"],
-        scenario["longitude"],
+        scenario.get('latitude', None),
+        scenario.get('longitude', None),
         facility["latitude"],
         facility["longitude"],
     )
