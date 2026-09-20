@@ -1,0 +1,25 @@
+{
+  "project": "EARTHSHIELD",
+  "day": 3,
+  "name": "Geospatial Command Center",
+  "status": "completed",
+  "features": [
+    "India monitoring map",
+    "Satellite imagery",
+    "Street map",
+    "Terrain map",
+    "USGS earthquake feed",
+    "India-region earthquake filtering",
+    "Earthquake heatmap",
+    "Open-Meteo weather monitoring",
+    "Weather risk classification",
+    "Alert center",
+    "System status",
+    "Auto refresh",
+    "Dark command center UI"
+  ],
+  "paths": {
+    "dashboard": "/content/EARTHSHIELD/app/dashboard.py",
+    "launch_script": "/content/EARTHSHIELD/run_day3.py"
+  }
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "scenario_id": "SCENARIO-EQ-001",
+    "name": "Ahmedabad Earthquake Demonstration",
+    "type": "Earthquake",
+    "latitude": 23.025,
+    "longitude": 72.575,
+    "magnitude": 6.2,
+    "severity": "HIGH",
+    "impact_radius_km": 15,
+    "description": "Synthetic earthquake used to test affected-person identification and emergency assistance."
+  },
+  {
+    "scenario_id": "SCENARIO-FLOOD-001",
+    "name": "Ahmedabad Flood Demonstration",
+    "type": "Flood",
+    "latitude": 23.01,
+    "longitude": 72.56,
+    "magnitude": null,
+    "severity": "HIGH",
+    "impact_radius_km": 10,
+    "description": "Synthetic flood scenario for testing assistance and shelter logic."
+  },
+  {
+    "scenario_id": "SCENARIO-CYCLONE-001",
+    "name": "Cyclone Demonstration",
+    "type": "Cyclone",
+    "latitude": 23.04,
+    "longitude": 72.59,
+    "magnitude": null,
+    "severity": "CRITICAL",
+    "impact_radius_km": 25,
+    "description": "Synthetic cyclone scenario for evacuation and shelter testing."
+  },
+  {
+    "scenario_id": "SCENARIO-WILDFIRE-001",
+    "name": "Wildfire Demonstration",
+    "type": "Wildfire",
+    "latitude": 23.06,
+    "longitude": 72.6,
+    "magnitude": null,
+    "severity": "HIGH",
+    "impact_radius_km": 8,
+    "description": "Synthetic wildfire scenario for evacuation testing."
+  }
+]

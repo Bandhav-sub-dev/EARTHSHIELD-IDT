@@ -1,0 +1,182 @@
+{
+  "Andhra Pradesh": {
+    "lat": 16.5062,
+    "lon": 80.648,
+    "capital": "Amaravati"
+  },
+  "Arunachal Pradesh": {
+    "lat": 27.0844,
+    "lon": 93.6053,
+    "capital": "Itanagar"
+  },
+  "Assam": {
+    "lat": 26.1445,
+    "lon": 91.7362,
+    "capital": "Dispur"
+  },
+  "Bihar": {
+    "lat": 25.5941,
+    "lon": 85.1376,
+    "capital": "Patna"
+  },
+  "Chhattisgarh": {
+    "lat": 21.2514,
+    "lon": 81.6296,
+    "capital": "Raipur"
+  },
+  "Goa": {
+    "lat": 15.4909,
+    "lon": 73.8278,
+    "capital": "Panaji"
+  },
+  "Gujarat": {
+    "lat": 23.0225,
+    "lon": 72.5714,
+    "capital": "Gandhinagar"
+  },
+  "Haryana": {
+    "lat": 30.7333,
+    "lon": 76.7794,
+    "capital": "Chandigarh"
+  },
+  "Himachal Pradesh": {
+    "lat": 31.1048,
+    "lon": 77.1734,
+    "capital": "Shimla"
+  },
+  "Jharkhand": {
+    "lat": 23.3441,
+    "lon": 85.3096,
+    "capital": "Ranchi"
+  },
+  "Karnataka": {
+    "lat": 12.9716,
+    "lon": 77.5946,
+    "capital": "Bengaluru"
+  },
+  "Kerala": {
+    "lat": 8.5241,
+    "lon": 76.9366,
+    "capital": "Thiruvananthapuram"
+  },
+  "Madhya Pradesh": {
+    "lat": 23.2599,
+    "lon": 77.4126,
+    "capital": "Bhopal"
+  },
+  "Maharashtra": {
+    "lat": 19.076,
+    "lon": 72.8777,
+    "capital": "Mumbai"
+  },
+  "Manipur": {
+    "lat": 24.817,
+    "lon": 93.9368,
+    "capital": "Imphal"
+  },
+  "Meghalaya": {
+    "lat": 25.5788,
+    "lon": 91.8933,
+    "capital": "Shillong"
+  },
+  "Mizoram": {
+    "lat": 23.7271,
+    "lon": 92.7176,
+    "capital": "Aizawl"
+  },
+  "Nagaland": {
+    "lat": 25.6751,
+    "lon": 94.1086,
+    "capital": "Kohima"
+  },
+  "Odisha": {
+    "lat": 20.2961,
+    "lon": 85.8245,
+    "capital": "Bhubaneswar"
+  },
+  "Punjab": {
+    "lat": 30.7333,
+    "lon": 76.7794,
+    "capital": "Chandigarh"
+  },
+  "Rajasthan": {
+    "lat": 26.9124,
+    "lon": 75.7873,
+    "capital": "Jaipur"
+  },
+  "Sikkim": {
+    "lat": 27.3389,
+    "lon": 88.6065,
+    "capital": "Gangtok"
+  },
+  "Tamil Nadu": {
+    "lat": 13.0827,
+    "lon": 80.2707,
+    "capital": "Chennai"
+  },
+  "Telangana": {
+    "lat": 17.385,
+    "lon": 78.4867,
+    "capital": "Hyderabad"
+  },
+  "Tripura": {
+    "lat": 23.8315,
+    "lon": 91.2868,
+    "capital": "Agartala"
+  },
+  "Uttar Pradesh": {
+    "lat": 26.8467,
+    "lon": 80.9462,
+    "capital": "Lucknow"
+  },
+  "Uttarakhand": {
+    "lat": 30.0668,
+    "lon": 79.0193,
+    "capital": "Dehradun"
+  },
+  "West Bengal": {
+    "lat": 22.5726,
+    "lon": 88.3639,
+    "capital": "Kolkata"
+  },
+  "Andaman and Nicobar Islands": {
+    "lat": 11.6234,
+    "lon": 92.7265,
+    "capital": "Port Blair"
+  },
+  "Chandigarh": {
+    "lat": 30.7333,
+    "lon": 76.7794,
+    "capital": "Chandigarh"
+  },
+  "Dadra and Nagar Haveli and Daman and Diu": {
+    "lat": 20.3974,
+    "lon": 72.8328,
+    "capital": "Daman"
+  },
+  "Delhi": {
+    "lat": 28.6139,
+    "lon": 77.209,
+    "capital": "New Delhi"
+  },
+  "Jammu and Kashmir": {
+    "lat": 34.0837,
+    "lon": 74.7973,
+    "capital": "Srinagar"
+  },
+  "Ladakh": {
+    "lat": 34.1526,
+    "lon": 77.5771,
+    "capital": "Leh"
+  },
+  "Lakshadweep": {
+    "lat": 10.5667,
+    "lon": 72.6417,
+    "capital": "Kavaratti"
+  },
+  "Puducherry": {
+    "lat": 11.9416,
+    "lon": 79.8083,
+    "capital": "Puducherry"
+  }
+}

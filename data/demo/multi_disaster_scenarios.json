@@ -1,0 +1,104 @@
+[
+  {
+    "scenario_id": "SCN-001",
+    "name": "Ahmedabad Earthquake",
+    "disaster_type": "EARTHQUAKE",
+    "severity": "HIGH",
+    "area": "Ahmedabad, Gujarat",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "impact_radius_km": 15,
+    "magnitude": 6.2,
+    "description": "Simulated strong earthquake affecting Ahmedabad."
+  },
+  {
+    "scenario_id": "SCN-002",
+    "name": "Mumbai Urban Flood",
+    "disaster_type": "FLOOD",
+    "severity": "HIGH",
+    "area": "Mumbai, Maharashtra",
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "impact_radius_km": 12,
+    "description": "Simulated extreme rainfall and urban flooding."
+  },
+  {
+    "scenario_id": "SCN-003",
+    "name": "Chennai Cyclone",
+    "disaster_type": "CYCLONE",
+    "severity": "CRITICAL",
+    "area": "Chennai, Tamil Nadu",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "impact_radius_km": 25,
+    "wind_speed_kmh": 150,
+    "description": "Simulated severe coastal cyclone."
+  },
+  {
+    "scenario_id": "SCN-004",
+    "name": "Delhi Extreme Heat",
+    "disaster_type": "HEATWAVE",
+    "severity": "HIGH",
+    "area": "New Delhi",
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "impact_radius_km": 18,
+    "temperature_c": 47,
+    "description": "Simulated extreme heat emergency."
+  },
+  {
+    "scenario_id": "SCN-005",
+    "name": "Dehradun Landslide",
+    "disaster_type": "LANDSLIDE",
+    "severity": "HIGH",
+    "area": "Dehradun, Uttarakhand",
+    "latitude": 30.3165,
+    "longitude": 78.0322,
+    "impact_radius_km": 10,
+    "description": "Simulated landslide affecting mountain-road communities."
+  },
+  {
+    "scenario_id": "SCN-006",
+    "name": "Jaipur Wildfire",
+    "disaster_type": "WILDFIRE",
+    "severity": "HIGH",
+    "area": "Jaipur, Rajasthan",
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "impact_radius_km": 8,
+    "description": "Simulated wildfire emergency."
+  },
+  {
+    "scenario_id": "SCN-007",
+    "name": "Guwahati Flood",
+    "disaster_type": "FLOOD",
+    "severity": "CRITICAL",
+    "area": "Guwahati, Assam",
+    "latitude": 26.1445,
+    "longitude": 91.7362,
+    "impact_radius_km": 15,
+    "description": "Simulated severe flooding requiring evacuation."
+  },
+  {
+    "scenario_id": "SCN-008",
+    "name": "Srinagar Landslide",
+    "disaster_type": "LANDSLIDE",
+    "severity": "HIGH",
+    "area": "Srinagar, Jammu and Kashmir",
+    "latitude": 34.0837,
+    "longitude": 74.7973,
+    "impact_radius_km": 12,
+    "description": "Simulated mountain-region landslide emergency."
+  },
+  {
+    "scenario_id": "SCN-009",
+    "name": "Kochi Coastal Evacuation",
+    "disaster_type": "TSUNAMI",
+    "severity": "CRITICAL",
+    "area": "Kochi, Kerala",
+    "latitude": 9.9312,
+    "longitude": 76.2673,
+    "impact_radius_km": 20,
+    "description": "Simulated coastal evacuation scenario."
+  }
+]

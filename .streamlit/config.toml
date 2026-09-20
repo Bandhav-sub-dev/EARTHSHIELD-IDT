@@ -1,0 +1,22 @@
+
+[server]
+address = "0.0.0.0"
+port = 8501
+headless = true
+
+# Colab sits behind a reverse proxy. These settings prevent the
+# proxy origin from being rejected by Streamlit.
+enableCORS = false
+enableXsrfProtection = false
+
+# Keep the WebSocket connection alive through the proxy.
+enableWebsocketCompression = false
+
+[browser]
+gatherUsageStats = false
+serverAddress = "0.0.0.0"
+serverPort = 8501
+
+[client]
+showErrorDetails = true
+toolbarMode = "minimal"

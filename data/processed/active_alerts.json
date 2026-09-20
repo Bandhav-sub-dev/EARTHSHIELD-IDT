@@ -1,0 +1,42 @@
+[
+  {
+    "hazard": "Earthquake",
+    "region": "281 km SSE of Dunhuang, China",
+    "level": "MODERATE",
+    "score": 75.0,
+    "message": "Magnitude 5.0 earthquake detected",
+    "source": "USGS",
+    "generated_at": "2026-09-20T05:57:49.662604+00:00",
+    "status": "MONITORING"
+  },
+  {
+    "hazard": "Earthquake",
+    "region": "18 km SW of Mongar, Bhutan",
+    "level": "MODERATE",
+    "score": 72.0,
+    "message": "Magnitude 4.8 earthquake detected",
+    "source": "USGS",
+    "generated_at": "2026-09-20T05:57:49.662371+00:00",
+    "status": "MONITORING"
+  },
+  {
+    "hazard": "Earthquake",
+    "region": "204 km N of Daocheng, China",
+    "level": "MODERATE",
+    "score": 69.0,
+    "message": "Magnitude 4.6 earthquake detected",
+    "source": "USGS",
+    "generated_at": "2026-09-20T05:57:49.662433+00:00",
+    "status": "MONITORING"
+  },
+  {
+    "hazard": "Earthquake",
+    "region": "273 km NNW of D\u00eaq\u00ean, China",
+    "level": "MODERATE",
+    "score": 67.5,
+    "message": "Magnitude 4.5 earthquake detected",
+    "source": "USGS",
+    "generated_at": "2026-09-20T05:57:49.662286+00:00",
+    "status": "MONITORING"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "project": "EarthShield",
+  "phase": "Day 2",
+  "name": "National Disaster Monitoring + Alert Center",
+  "created_at": "2026-09-20T05:56:53.118856+00:00",
+  "features": [
+    "India state and UT monitoring registry",
+    "National weather monitoring",
+    "India earthquake monitoring",
+    "National risk map",
+    "Prototype alert engine",
+    "ENSO / El Ni\u00f1o / La Ni\u00f1a monitoring",
+    "National monitoring dashboard"
+  ],
+  "sources": [
+    "Open-Meteo",
+    "USGS Earthquake Hazards Program",
+    "NOAA Climate Prediction Center"
+  ],
+  "official_warning": false,
+  "ai_training": false,
+  "validation_passed": true
+}

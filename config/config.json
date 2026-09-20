@@ -1,0 +1,51 @@
+{
+  "project": {
+    "name": "EarthShield",
+    "version": "0.1.0",
+    "type": "college_prototype"
+  },
+  "hazards": [
+    "rainfall",
+    "cyclone",
+    "earthquake",
+    "flood",
+    "wildfire",
+    "heatwave",
+    "tsunami",
+    "landslide",
+    "volcano"
+  ],
+  "risk_levels": {
+    "LOW": [
+      0,
+      20
+    ],
+    "MODERATE": [
+      21,
+      40
+    ],
+    "HIGH": [
+      41,
+      70
+    ],
+    "SEVERE": [
+      71,
+      90
+    ],
+    "EXTREME": [
+      91,
+      100
+    ]
+  },
+  "default_location": {
+    "name": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "country": "India"
+  },
+  "data_sources": {
+    "weather": "Open-Meteo",
+    "earthquake": "USGS Earthquake API",
+    "documents": "MarkItDown"
+  }
+}

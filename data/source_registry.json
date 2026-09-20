@@ -1,0 +1,70 @@
+{
+  "project": "EARTHSHIELD",
+  "purpose": "Disaster monitoring, impact analysis and emergency assistance prototype",
+  "live_sources": [
+    {
+      "name": "USGS Earthquake Hazards Program",
+      "category": "Earthquake",
+      "type": "LIVE",
+      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+      "used_for": [
+        "Earthquake location",
+        "Magnitude",
+        "Depth",
+        "Time",
+        "Tsunami indicator",
+        "Alert information"
+      ]
+    },
+    {
+      "name": "Open-Meteo",
+      "category": "Weather",
+      "type": "LIVE",
+      "url": "https://api.open-meteo.com/v1/forecast",
+      "used_for": [
+        "Temperature",
+        "Rain",
+        "Precipitation",
+        "Wind",
+        "Weather conditions"
+      ]
+    }
+  ],
+  "map_sources": [
+    {
+      "name": "OpenStreetMap",
+      "category": "Base Map",
+      "type": "MAP",
+      "used_for": "Street/geographic visualization"
+    },
+    {
+      "name": "Esri World Imagery",
+      "category": "Satellite",
+      "type": "MAP",
+      "used_for": "Satellite imagery visualization"
+    },
+    {
+      "name": "OpenTopoMap",
+      "category": "Terrain",
+      "type": "MAP",
+      "used_for": "Terrain visualization"
+    }
+  ],
+  "demo_sources": [
+    {
+      "name": "people_demo.json",
+      "type": "SYNTHETIC",
+      "purpose": "Testing location-based alerts"
+    },
+    {
+      "name": "emergency_facilities_demo.json",
+      "type": "SYNTHETIC",
+      "purpose": "Testing shelters and emergency assistance"
+    },
+    {
+      "name": "disaster_test_scenarios.json",
+      "type": "SYNTHETIC",
+      "purpose": "Reproducible disaster scenarios"
+    }
+  ]
+}

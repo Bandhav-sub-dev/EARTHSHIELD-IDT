@@ -1,0 +1,21 @@
+{
+  "project": "EARTHSHIELD",
+  "module": "Day 3.5 People Safety & Emergency Assistance",
+  "generated_at_utc": "2026-09-20T07:38:54.618802+00:00",
+  "datasets": {
+    "people": 12,
+    "facilities": 8,
+    "scenarios": 4
+  },
+  "expected_capabilities": [
+    "Identify people inside disaster impact radius",
+    "Generate simulated person alerts",
+    "Find nearby emergency facilities",
+    "Filter facilities by type",
+    "Check facility capacity",
+    "Display people and facilities on a map",
+    "Run reproducible synthetic disaster scenarios",
+    "Document live data sources separately from demo data"
+  ],
+  "privacy_note": "All people and personal information in this demonstration dataset are synthetic."
+}
