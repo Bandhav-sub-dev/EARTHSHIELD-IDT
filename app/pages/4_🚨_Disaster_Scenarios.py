@@ -92,26 +92,71 @@ st.markdown(
 )
 
 
-ROOT = Path("/content/EARTHSHIELD")
+ROOT = Path(__file__).resolve().parents[2]
 DEMO = ROOT / "data" / "demo"
 
-PEOPLE_FILE = DEMO / "people_multi_area_demo.json"
-FACILITY_FILE = DEMO / "facilities_multi_area_demo.json"
-SCENARIO_FILE = DEMO / "multi_disaster_scenarios.json"
+PEOPLE_FILE = DEMO / "people_demo.json"
+FACILITY_FILE = DEMO / "emergency_facilities_demo.json"
+SCENARIO_FILE = DEMO / "disaster_test_scenarios.json"
 
 
 # =============================================================================
 # LOAD DATA
 # =============================================================================
 
-def load_json(path):
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+def load_json(path, label):
+    if not path.exists():
+        st.error(
+            f"{label} dataset not found: {path}"
+        )
+        return []
+
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as exc:
+        st.error(
+            f"Could not load {label} dataset: {exc}"
+        )
+        return []
+
+    if not isinstance(data, list):
+        st.error(
+            f"{label} dataset must contain a JSON list."
+        )
+        return []
+
+    return data
 
 
-people = load_json(PEOPLE_FILE)
-facilities = load_json(FACILITY_FILE)
-scenarios = load_json(SCENARIO_FILE)
+people = load_json(PEOPLE_FILE, "People")
+facilities = load_json(FACILITY_FILE, "Emergency Facilities")
+scenarios = load_json(SCENARIO_FILE, "Disaster Scenarios")
+
+# Normalize the V1 demo schemas so the scenario simulator remains
+# compatible with the original V1 datasets.
+for person in people:
+    person.setdefault("state", "Gujarat")
+    person.setdefault("mobile", "DEMO-NOT-SENT")
+    person.setdefault("notification_enabled", True)
+
+for facility in facilities:
+    capacity = int(facility.get("capacity", 0) or 0)
+    occupancy = int(facility.get("current_occupancy", 0) or 0)
+    facility["available_capacity"] = max(
+        capacity - occupancy,
+        0
+    )
+    facility.setdefault("address", "Demo address — synthetic data")
+    facility.setdefault("status", "OPEN")
+
+if not scenarios:
+    st.error(
+        "No disaster scenarios are available. "
+        "Check data/demo/disaster_test_scenarios.json."
+    )
+    st.stop()
+
 
 
 # =============================================================================
@@ -142,7 +187,7 @@ def nearest_shelter(person, scenario):
 
     for facility in facilities:
 
-        if facility.get("status") != "OPEN":
+        if str(facility.get("status", "")).upper() != "OPEN":
             continue
 
         if facility.get("available_capacity", 0) <= 0:
