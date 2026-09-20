@@ -307,7 +307,8 @@ st.markdown(
 st.sidebar.header("SCENARIO CONTROL")
 
 scenario_names = [
-    f"{s['name']} — {s['disaster_type']}"
+    f"{s.get('name', 'Unnamed Scenario')} — "
+f"{s.get('disaster_type', s.get('hazard_type', 'Unknown Hazard'))}"
     for s in scenarios
 ]
 
