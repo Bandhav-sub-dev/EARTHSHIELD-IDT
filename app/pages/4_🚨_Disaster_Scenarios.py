@@ -5,6 +5,13 @@ from pathlib import Path
 
 import pandas as pd
 import streamlit as st
+
+# EARTHSHIELD_SAFE_SMS_PERSON_STATE
+# Application state is intentionally separate from the widget state.
+if "sms_selected_person" not in st.session_state:
+    st.session_state["sms_selected_person"] = None
+
+
 import folium
 from streamlit_folium import st_folium
 
@@ -693,7 +700,7 @@ if affected:
         ):
 
             st.session_state["demo_sms"] = message
-            st.session_state["sms_recipient"] = sms_person
+            st.session_state["sms_selected_person"] = sms_person
 
             st.success(
                 "Demo SMS generated. NO message was actually sent."
