@@ -4,7 +4,7 @@ from pathlib import Path
 import streamlit as st
 import pandas as pd
 
-PROJECT = Path("/content/EARTHSHIELD")
+PROJECT = Path(__file__).resolve().parents[2]
 SOURCE_FILE = PROJECT / "data" / "source_registry.json"
 
 st.set_page_config(
@@ -41,11 +41,30 @@ if SOURCE_FILE.exists():
     with open(SOURCE_FILE, "r", encoding="utf-8") as f:
         registry = json.load(f)
 else:
+    st.error(
+        "EARTHSHIELD source registry was not found. "
+        "Expected: data/source_registry.json"
+    )
     registry = {
         "live_sources": [],
         "map_sources": [],
         "demo_sources": []
     }
+
+st.metric(
+    "Live source count",
+    len(registry.get("live_sources", []))
+)
+
+st.metric(
+    "Map source count",
+    len(registry.get("map_sources", []))
+)
+
+st.metric(
+    "Demo dataset count",
+    len(registry.get("demo_sources", []))
+)
 
 st.subheader("🟢 Live Data Sources")
 

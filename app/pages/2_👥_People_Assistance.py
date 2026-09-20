@@ -8,7 +8,7 @@ import streamlit as st
 import folium
 from streamlit_folium import st_folium
 
-PROJECT = Path("/content/EARTHSHIELD")
+PROJECT = Path(__file__).resolve().parents[2]
 DEMO_DIR = PROJECT / "data" / "demo"
 
 PEOPLE_FILE = DEMO_DIR / "people_demo.json"
@@ -66,9 +66,21 @@ h1, h2, h3 {
 
 def load_json(path):
     if not path.exists():
+        st.error(f"Required dataset not found: {path}")
         return []
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as exc:
+        st.error(f"Could not load dataset {path.name}: {exc}")
+        return []
+
+    if not isinstance(data, list):
+        st.error(f"Dataset {path.name} must contain a JSON list.")
+        return []
+
+    return data
 
 
 people = load_json(PEOPLE_FILE)
@@ -189,9 +201,17 @@ They do not represent real people or real emergency incidents.
 st.sidebar.header("🎛️ Demo Controls")
 
 scenario_names = [
-    s["name"]
-    for s in scenarios
+    s.get("name", f"Scenario {i + 1}")
+    for i, s in enumerate(scenarios)
+    if isinstance(s, dict)
 ]
+
+if not scenario_names:
+    st.error(
+        "No valid disaster scenarios are available. "
+        "Check data/demo/disaster_test_scenarios.json."
+    )
+    st.stop()
 
 selected_name = st.sidebar.selectbox(
     "Select disaster test scenario",
@@ -199,9 +219,19 @@ selected_name = st.sidebar.selectbox(
 )
 
 selected = next(
-    s for s in scenarios
-    if s["name"] == selected_name
+    (
+        s for s in scenarios
+        if isinstance(s, dict)
+        and s.get("name") == selected_name
+    ),
+    None
 )
+
+if selected is None:
+    st.error(
+        "The selected disaster scenario could not be loaded."
+    )
+    st.stop()
 
 radius = st.sidebar.slider(
     "Impact radius (km)",
